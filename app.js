@@ -1,10 +1,15 @@
-// .splice() *This is one of several different ways to use splice(), read the documentation
-var lunchItems = ['Turkey Sandwich', 'Falafel', 'Paella', 'Processor Speed', 'RAM', 'Gyro'];
-var indexOfFirstItemToBeRemoved = 3;
-var numberOfItemsToRemove = 2;
-var itemToBeAdded1 = 'Fish Tacos';
-var itemToBeAdded2 = 'Pizza';
+function applySlice(array, start, end) {
+    // create a sliceOfArray variable
+    // assign it to a portion of the array from before start, up to, but not including end
+    const sliceOfArray = array.slice(start, end);
+    // return the sliceOfArray variable
+    return sliceOfArray;
+};
 
-lunchItems.splice(indexOfFirstItemToBeRemoved, numberOfItemsToRemove, itemToBeAdded1, itemToBeAdded2);
-console.log('list of lunch items after splicing:', lunchItems);
-// Logs [ 'Turkey Sandwich', 'Falafel', 'Paella', 'Fish Tacos', 'Pizza', 'Gyro' ]
+var array1 = ['Q', 'u', 'e', 'u', 'e'];
+var resultOfSlice1 = applySlice(array1, 1, 4);
+console.log('should log ["u", "e", "u"]:', resultOfSlice1);
+
+var array2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var resultOfSlice2 = applySlice(array2, 2, 8);
+console.log('should log [2, 3, 4, 5, 6, 7]:', resultOfSlice2);
