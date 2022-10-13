@@ -1,17 +1,14 @@
-function applyIndexOfToArray(array, element) {
-    // create an index variable
-    // assign it to the index inside of array where element can be found
-    const index = array.indexOf(element);
-    // return the index variable
-    return index;
-};  
+var colors = [
+    ['red'],
+    'orange',
+    ['yellow', ['green', ['blue']]],
+    ['indigo', 'violet']
+];
 
-var array1 = ['Quick', 'sort', 'is', 'wild'];
-var element1 = 'sort';
-var resultIndex1 = applyIndexOfToArray(array1, element1);
-console.log('should log 1:', resultIndex1);
-
-var array2 = ['size', 'color', 'cut', 'price'];
-var element2 = 'style';
-var resultIndex2 = applyIndexOfToArray(array2, element2);
-console.log('should log -1:', resultIndex2);
+console.log('blue', colors[2][1][1][0]);
+console.log('green', colors[2][1][0]);
+console.log('indigo', colors[3][0]);
+console.log('orange', colors[1]);
+console.log('red', colors[0][0]);
+console.log('violet', colors[3][1]);
+console.log('yellow', colors[2][0]);
