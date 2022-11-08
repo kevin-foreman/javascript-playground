@@ -1,35 +1,31 @@
-function countWords(stringOfWords) {
+function getElementsThatEqual10AtProperty(obj, key) {
     // your code here
-    // if input is an empty string
-    if (stringOfWords === '') {
-        // return empty object
-        return {};
-    }
-    // create result count object
-    var counts = {};
-    // split the input string into an array of words
-    var words = stringOfWords.split(' ');
-    // iterate over the array of words
-    for (var i = 0; i < words.length; i++) {
-        var currentWord = words[i];
-    // check if current word is not in result object
-        if (counts[currentWord] === undefined) {
-        // if not, instantiate current word in object with value of 1
-        counts[currentWord] = 1;
-    // otherwise
-        } else {
-        // increment value of current word in object by 1
-        counts[currentWord]++;
+    /* START SOLUTION */
+
+    var myNewArr = [];
+    // check if a key exists on the object
+    if (obj[key]) {
+        // loop through the object at each key
+        for (var i in obj[key]) {
+            // check for deep equality to 10 at each index of the key values
+            if (obj[key][i] === 10) {
+                // once found use the .push method to populate our earlier created empty array
+                myNewArr.push(obj[key][i]);
+
+            }
+
         }
-    };
+        return myNewArr;
 
+    }
 
-    // return the result count object
-    return counts;
+    return myNewArr;
+
+    /* END SOLUTION */
 };
 
-var result1 = countWords('ask a bunch get a bunch');
-console.log('should log "{ask: 1, a: 2, bunch: 2, get: 1}":', result1);
-
-var result2 = countWords('');
-console.log('should log "{}":', result2);
+var obj = {
+    key: [1000, 10, 50, 10]
+};
+var output = getElementsThatEqual10AtProperty(obj, 'key');
+console.log(output); // --> [10, 10]
