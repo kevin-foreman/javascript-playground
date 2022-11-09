@@ -1,31 +1,29 @@
-function getElementsThatEqual10AtProperty(obj, key) {
+function computeAverageOfNumbers(nums) {
     // your code here
     /* START SOLUTION */
 
-    var myNewArr = [];
-    // check if a key exists on the object
-    if (obj[key]) {
-        // loop through the object at each key
-        for (var i in obj[key]) {
-            // check for deep equality to 10 at each index of the key values
-            if (obj[key][i] === 10) {
-                // once found use the .push method to populate our earlier created empty array
-                myNewArr.push(obj[key][i]);
+    var sum = 0;
 
-            }
+    if (nums.length === 0) {
 
-        }
-        return myNewArr;
+        return 0;
 
-    }
+    } else {
+        for (var i =0; i < nums.length; i++) {
 
-    return myNewArr;
+        sum += nums[i];
+
+        };
+    };
+
+    var avg = sum / nums.length;
+
+    return avg;
 
     /* END SOLUTION */
 };
 
-var obj = {
-    key: [1000, 10, 50, 10]
-};
-var output = getElementsThatEqual10AtProperty(obj, 'key');
-console.log(output); // --> [10, 10]
+// var input = [];
+var input = [1, 2, 3, 4, 5];
+var output = computeAverageOfNumbers(input);
+console.log(output); // --> 3
