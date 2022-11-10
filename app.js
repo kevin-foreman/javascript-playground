@@ -1,28 +1,24 @@
-function getAverageOfElementsAtProperty(obj, key) {
+function getOddLengthWordsAtProperty(obj, key) {
     // your code here
     /* START SOLUTION */
-    var sum = 0;
 
-    if (obj[key].length === 0 || Array.isArray (obj[key]) === false) {
+    if (Array.isArray(obj[key]) === false || obj[key].length === 0) {
 
-        return 0;
+        return [];
 
-    } else {
-        for (var i = 0; i < obj[key].length; i++) {
+    }
 
-            sum += obj[key][i];
+    var oddLengthWords = obj[key].filter(function (x) {
+        return x.length % 2 !== 0
+    })
 
-        };
-    };
+    return oddLengthWords;
 
-    var avg = sum / obj[key].length;
-
-    return avg;
     /* END SOLUTION */
 };
 
 var obj = {
-    key: [1, 2, 3]
+    key: ['It', 'has', 'some', 'words']
 };
-var output = getAverageOfElementsAtProperty(obj, 'key');
-console.log(output); // --> 2
+var output = getOddLengthWordsAtProperty(obj, 'key');
+console.log(output); // --> ['has', 'words']
