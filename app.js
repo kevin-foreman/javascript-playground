@@ -1,24 +1,13 @@
-function getOddLengthWordsAtProperty(obj, key) {
+function removeElement(array, discarder) {
     // your code here
     /* START SOLUTION */
 
-    if (Array.isArray(obj[key]) === false || obj[key].length === 0) {
-
-        return [];
-
-    }
-
-    var oddLengthWords = obj[key].filter(function (x) {
-        return x.length % 2 !== 0
-    })
-
-    return oddLengthWords;
+    return array.filter(function (numbersToKeep) {
+        return numbersToKeep !== discarder;
+    });
 
     /* END SOLUTION */
 };
 
-var obj = {
-    key: ['It', 'has', 'some', 'words']
-};
-var output = getOddLengthWordsAtProperty(obj, 'key');
-console.log(output); // --> ['has', 'words']
+var output = removeElement([1, 2, 3, 2, 1], 2);
+console.log(output); // --> [1, 3, 1]
