@@ -1,7 +1,7 @@
 function joinArrayOfArrays(arr) {
     // your code here
 
-    var joinedArr = [].concat.apply([], arr);
+    var joinedArr = arr.flat();
 
     return joinedArr;
 
